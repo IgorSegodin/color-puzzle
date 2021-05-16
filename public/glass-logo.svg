@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+
+    <g>
+        <!-- Colors -->
+        <path fill="red" d="M 10.625 15 L 39.375 15 L 38.75 20 L 11.25 20 z"/>
+        <path fill="orange" d="M 11.25 20 L 38.75 20 L 38.125 25 L 11.875 25 z"/>
+        <path fill="yellow" d="M 11.875 25 L 38.125 25 L 37.5 30 L 12.5 30 z"/>
+        <path fill="green" d="M 12.5 30 L 37.5 30 L 36.875 35 L 13.125 35 z"/>
+        <path fill="cyan" d="M 13.125 35 L 36.875 35 L 36.25 40 L 13.75 40 z"/>
+        <path fill="blue" d="M 13.75 40 L 36.25 40 L 35.625 45 L 14.375 45 z"/>
+        <path fill="purple" d="M 14.375 45 L 35.625 45 L 35 50 L 15 50 z"/>
+
+        <!-- Glass -->
+        <path fill-opacity="0" stroke="#A2A2A2" stroke-width="1.5" d="M 10 10 L 40 10 L 35 50 L 15 50 z"/>
+<!--        <polyline fill-opacity="0" stroke="#A2A2A2" stroke-width="1.5" points="10,10 40,10 35,50 15,50 10,10"/>-->
+    </g>
+</svg>
