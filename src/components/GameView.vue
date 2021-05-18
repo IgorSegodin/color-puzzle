@@ -110,7 +110,7 @@ export default {
       }
 
       // Mix array with colors
-      for (let i = 0; i < colors.length * 2; i++) {
+      for (let i = 0; i < colors.length; i++) {
         const i1 = MathUtil.randomIntRange(0, colors.length - 1);
         const i2 = MathUtil.randomIntRange(0, colors.length - 1);
         const c = colors[i1];
