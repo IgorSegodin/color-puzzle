@@ -110,14 +110,8 @@ export default {
       }
 
       // Mix array with colors
-      for (let i = 0; i < colors.length; i++) {
-        const i1 = MathUtil.randomIntRange(0, colors.length - 1);
-        const i2 = MathUtil.randomIntRange(0, colors.length - 1);
-        const c = colors[i1];
 
-        colors[i1] = colors[i2];
-        colors[i2] = c;
-      }
+      ArrayUtil.shuffle(colors);
 
       return ArrayUtil.splitArray(colors, this.glassMaxLayers - 1)
           .map(layerColors => {
