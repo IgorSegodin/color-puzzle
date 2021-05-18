@@ -21,13 +21,14 @@ export default {
         'orange',
         'red',
       ],
-      glassCount: 4,
+      glassCount: 3,
       glassHeight: 100,
       glassWidth: 70,
-      glassMaxLayers: 4,
+      glassMaxLayers: 3,
       glassList: [],
 
       selectedGlassIndex: null,
+      stepCount: 0,
       victory: false
     }
   },
@@ -65,6 +66,7 @@ export default {
             sourceGlass.layers.splice(sourceGlass.layers.length - 1, 1)[0]
         );
 
+        this.stepCount += 1;
         this.selectedGlassIndex = null;
 
         this.checkWinCondition();
@@ -73,6 +75,7 @@ export default {
 
     onStartClick() {
       this.selectedGlassIndex = null;
+      this.stepCount = 0;
       this.victory = false;
       this.glassList = this.generateGlassList();
     },
@@ -163,6 +166,10 @@ export default {
   <div>
     <b>Color - Puzzle</b>
     <button @click="onStartClick">Restart</button>
+  </div>
+
+  <div>
+    Steps: {{ stepCount }}
   </div>
 
   <div class="game-container">
