@@ -75,21 +75,10 @@ export default {
     listLayerSvgData() {
       const list = [];
 
-      // temp array, should not be here
-      const colors = [
-        'purple',
-        // 'blue',
-        // 'cyan',
-        'green',
-        'yellow',
-        'orange',
-        'red',
-      ];
-
       let previousLayerTopWidth = this.bottomWidth;
       let previousHeight = 0;
 
-      for (let i = 0; i < this.maxLayers - 1; i++) {
+      for (let i = 0; i < this.layers.length; i++) {
         const layerHeight = GameUtil.calcLayerHeight({
           liquidArea: this.layerVolume,
           bottomWidth: previousLayerTopWidth,
@@ -114,7 +103,7 @@ export default {
 
         list.push(
             {
-              color: colors[i],
+              color: this.layers[i].color,
               path: this.pointsToSvgPath([
                 {x: x1Top, y: yTop},
                 {x: x2Top, y: yTop},
