@@ -13,7 +13,7 @@ export default {
     return {
       availableColors: [
         'purple',
-        // 'blue',
+        'blue',
         'cyan',
         'green',
         'greenyellow',
@@ -77,7 +77,12 @@ export default {
       this.selectedGlassIndex = null;
       this.stepCount = 0;
       this.victory = false;
-      this.glassList = this.generateGlassList();
+      let glassList = this.generateGlassList();
+
+      while (this.isPuzzleComplete(glassList)) {
+        glassList = this.generateGlassList()
+      }
+      this.glassList = glassList;
     },
 
     /**
@@ -126,10 +131,16 @@ export default {
     },
 
     checkWinCondition() {
+      if (this.isPuzzleComplete(this.glassList)) {
+        this.victory = true;
+      }
+    },
+
+    isPuzzleComplete(glassList) {
       let complete = true;
 
-      for (let i = 0; i < this.glassList.length; i++) {
-        const glass = this.glassList[i];
+      for (let i = 0; i < glassList.length; i++) {
+        const glass = glassList[i];
 
         if (glass.layers.length === 0
             || glass.layers.length >= this.glassMaxLayers) {
@@ -147,10 +158,7 @@ export default {
           }
         }
       }
-
-      if (complete) {
-        this.victory = true;
-      }
+      return complete;
     }
   }
 }
